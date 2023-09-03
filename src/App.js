@@ -1,32 +1,31 @@
-import { useEffect } from "react";
-import Home from "./pages/home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Details from "./pages/details";
+import "./app.scss";
+import Root from "./pages/root";
+import LandingPage from "./components/landingPage";
 
-const requestParams = {
-  key: "f17e16cdde684d09bcc215903232306",
-  q: "Paris",
-};
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,    children: [
+      { path: "", element: <LandingPage /> },
+      {
+        path: "details",
+        element: <Details />,
+      },
+    ],
+  },
+  // {
+  //   path: "details",
+  //   element: <Details />,
+  // },
+]);
 function App() {
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        "https://api.weatherapi.com/v1/current.json?key=f17e16cdde684d09bcc215903232306&q=" +
-          requestParams.q,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      const data = await response.json();
-      console.log(data);
-    }
-    fetchData();
-  }, []);
-
   return (
     <>
-      <Home />
+      <div className="container">
+        <RouterProvider router={router}></RouterProvider>
+      </div>
     </>
   );
 }
