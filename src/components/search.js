@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { geoApiOptions, geoUrl } from "../Api/api";
 import "./search.scss";
@@ -6,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../Api/api";
 
 const Search = ({ onSearchChange }) => {
+  const location = useLocation();
+  const path = location.pathname;
+  console.log(path);
   const [search, setSearch] = useState(null);
 
   const navigate = useNavigate();
@@ -38,7 +42,9 @@ const Search = ({ onSearchChange }) => {
     console.log(searchData);
     setSearch(searchData);
     searchChangeHandler(searchData);
-    navigate("details");
+    if (location.pathname !== "/details") {
+      navigate("details");
+    }
   };
 
   const loadOptions = (inputValue) => {

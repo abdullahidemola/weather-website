@@ -1,18 +1,16 @@
 import { useState } from "react";
 
+import Search from "../components/search";
+import { useLocation } from "react-router-dom";
+
 const Home = () => {
-  const [currentWeather, setCurrentWeather] = useState(null);
-
-  const [currentForecast, setCurrentForecast] = useState(null);
-
-
-
-  console.log(currentForecast);
-  console.log(currentWeather);
+  // const location = useLocation();
+  // console.log(location);
   return (
     <>
       <div>
         <h1>details</h1>
+        <Search />
       </div>
     </>
   );

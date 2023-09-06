@@ -1,11 +1,19 @@
 @import "../styles/variables.scss";
 
 .container {
-  h1 {
-    width: 300px;
-    border: 1px solid;
+  h2 {
+    text-transform: capitalize;
+    font-size: 25px;
+    width: fit-content;
+    height: fit-content;
+    font-weight: 400;
+    padding: 50px 0 40px 60px;
+  }
+  .search-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: -2%;
+    left: 80%;
+    margin-right: 40px;
+    border: 1px solid;
   }
 }

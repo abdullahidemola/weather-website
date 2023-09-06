@@ -1,11 +1,12 @@
 import "./landingPage.scss";
+import Search from "./search";
 
 const LandingPage = () => {
   return (
-    <h1>
-      Get current weather <br />
-      and 7-day forecast
-    </h1>
+    <div className="header">
+      <h1 className="text">Get current weather and 7-day forecast</h1>
+      <Search />
+    </div>
   );
 };
 
