@@ -2,6 +2,7 @@ import Search from "../components/search";
 import "./details.scss";
 
 const Details = () => {
+
   return (
     <div className="container">
       <h2>home</h2>
