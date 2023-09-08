@@ -1,8 +1,7 @@
 import Search from "../components/search";
-import "./details.scss";
+import "./detailsPage.scss";
 
-const Details = () => {
-
+const DetailsPage = () => {
   return (
     <div className="container">
       <h2>home</h2>
@@ -14,4 +13,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default DetailsPage;

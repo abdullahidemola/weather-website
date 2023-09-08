@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../Api/api";
 
-export const fetchSlice = createSlice({
+const fetchSlice = createSlice({
   name: "fetchy",
   initialState: {
     weatherResponse: "",
@@ -9,8 +9,9 @@ export const fetchSlice = createSlice({
   },
 
   reducers: {
-    getLatLng: (action) => {
+    getLatLng: (state, action) => {
       const [lat, lon] = action.payload.split(" ");
+      console.log(lat, lon);
       const fetchWeather = fetch(
         `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
       );
@@ -25,6 +26,7 @@ export const fetchSlice = createSlice({
 
           const forecastResponse = await response[1].json();
 
+          state = { weatherResponse, forecastResponse };
           console.log(weatherResponse);
           console.log(forecastResponse);
         })

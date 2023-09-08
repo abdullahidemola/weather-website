@@ -1,7 +1,7 @@
-import "./landingPage.scss";
+import "./homePage.scss";
 import Search from "./search";
 
-const LandingPage = () => {
+const HomePage = () => {
   return (
     <div className="header">
       <h1 className="text">Get current weather and 7-day forecast</h1>
@@ -10,4 +10,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default HomePage;
