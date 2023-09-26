@@ -1,19 +1,69 @@
 @import "../styles/variables.scss";
 
 .container {
-  h2 {
-    text-transform: capitalize;
-    font-size: 25px;
-    width: fit-content;
-    height: fit-content;
-    font-weight: 400;
-    padding: 50px 0 40px 60px;
+  background: url(../images/bck2.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+
+  .container-header {
+    h2 {
+      text-transform: capitalize;
+      font-size: 25px;
+      width: fit-content;
+      height: fit-content;
+      font-weight: 400;
+      padding: 50px 0 40px 60px;
+      cursor: pointer;
+    }
+    .search-container {
+      position: absolute;
+      top: -2%;
+      left: 80%;
+      margin-right: 20re;
+      border: 1px solid;
+    }
   }
-  .search-container {
-    position: absolute;
-    top: -2%;
-    left: 80%;
-    margin-right: 40px;
-    border: 1px solid;
+}
+
+@keyframes backgroundEffect {
+  0% {
+    background: url(../images/rain.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  20% {
+    background: url(../images/rain.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  40% {
+    background: url(../images/bck4.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  60% {
+    background: url(../images/bck4.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  80% {
+    background: url(../images/bck5.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  100% {
+    background: url(../images/clouds.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }

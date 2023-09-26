@@ -5,7 +5,7 @@ import { geoApiOptions, geoUrl } from "../Api/api";
 import "./search.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { getLatLng, setWeatherResponseState } from "../store/fetchSlice";
+import { setWeatherResponseState } from "../store/fetchSlice";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../Api/api";
 
 const Search = () => {
@@ -15,8 +15,9 @@ const Search = () => {
   const dispatch = useDispatch();
 
   const onChangeHandler = (searchData) => {
+    setSearch(searchData);
 
-    const [lat, lon ] = searchData.value.split(" ")
+    const [lat, lon] = searchData.value.split(" ");
     const fetchWeather = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -29,14 +30,20 @@ const Search = () => {
       .then(async (response) => {
         const weatherResponse = await response[0].json();
         const forecastResponse = await response[1].json();
-        
-       dispatch(setWeatherResponseState({weatherResponseData: weatherResponse, forecastResponseData:forecastResponse}));
 
+        dispatch(
+          setWeatherResponseState({
+            weatherResponseData: { city: searchData.label, ...weatherResponse },
+            forecastResponseData: {
+              city: searchData.label,
+              ...forecastResponse,
+            },
+          })
+        );
       })
       .catch((err) => console.log(err));
 
     console.log(searchData.value);
-    setSearch(searchData);
     if (location.pathname !== "/details") {
       navigate("details");
     }
