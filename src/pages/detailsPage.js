@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import Search from "../components/search";
 import CurrentWeatherComponent from "../components/currentWeatherComponent";
 import { useNavigate } from "react-router-dom";
-import sunbeach from "../images/sunbeach.jpg";
 
 import "./detailsPage.scss";
 
@@ -22,7 +21,7 @@ const DetailsPage = () => {
           home
         </h2>
         <div className="search-container">
-          <Search />
+          <Search className="search-details" />
         </div>
       </div>
       {weatherData.cod && (

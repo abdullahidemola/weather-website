@@ -29,6 +29,9 @@
     justify-content: space-around;
     .temp {
       font-size: 60px;
+      @include media("<415px") {
+        font-size: 50px;
+      }
     }
     .details {
       .parameter {
@@ -43,6 +46,9 @@
         }
       }
     }
+  }
+  @include media("<415px") {
+    width: 20rem;
   }
 }
 
@@ -61,6 +67,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        cursor: pointer;
         span {
           width: fit-content;
         }
@@ -87,6 +94,37 @@
           }
         }
       }
+
+      @include media("<712px") {
+        width: 400px;
+        margin-left: 40px;
+
+        .content-section {
+          .content {
+            span {
+              margin: 5px;
+            }
+          }
+        }
+      }
+
+      @include media("<510px") {
+        width: 300px;
+      }
+      @include media("<415px") {
+        width: 18rem;
+        margin-left: 6px;
+      }
     }
+  }
+
+  @include media("<712px") {
+    width: 30rem;
+  }
+  @include media("<510px") {
+    width: 25rem;
+  }
+  @include media("<415px") {
+    width: 20rem;
   }
 }

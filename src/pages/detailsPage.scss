@@ -6,27 +6,42 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100%;
-  width: 100%;
-
+  height: 80rem;
   .container-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+
     h2 {
+      font-family: $primary-font;
+      color: aliceblue;
       text-transform: capitalize;
       font-size: 25px;
       width: fit-content;
       height: fit-content;
       font-weight: 400;
-      padding: 50px 0 40px 60px;
       cursor: pointer;
+      @include media("<510px") {
+        font-size: 20px;
+      }
     }
     .search-container {
-      position: absolute;
-      top: -2%;
-      left: 80%;
-      margin-right: 20re;
-      border: 1px solid;
+      .search-details {
+        width: 400px;
+        @include media("<510px") {
+          width: 300px;
+        }
+        @include media("<415px") {
+          width: 18rem;
+        }
+      }
     }
   }
+}
+
+.container::-webkit-scrollbar-button {
+  display: none;
 }
 
 @keyframes backgroundEffect {

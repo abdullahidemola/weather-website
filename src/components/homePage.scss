@@ -1,7 +1,7 @@
 @import "../styles/variables.scss";
 
 .header {
-  height: 100vh;
+  height: 80rem;
   animation: backgroundChange infinite linear 10s;
   .text {
     position: absolute;
@@ -10,10 +10,65 @@
     transform: translate(-50%);
     font-family: $primary-font;
     color: $primary-color1;
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: 800;
     text-transform: capitalize;
     text-align: center;
     padding-top: 90px;
+  }
+
+  @include media("<990px") {
+    .text {
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
+
+  @include media("<785px") {
+    .text {
+      font-size: 40px;
+      font-weight: 700;
+      width: 500px;
+    }
+  }
+
+  @include media("<= 515px") {
+    .text {
+      font-size: 40px;
+      font-weight: 700;
+      width: 25rem;
+    }
+  }
+
+  @include media("<= 410px") {
+    .text {
+      font-size: 25px;
+      font-weight: 600;
+      width: 20rem;
+      padding-top: 120px;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    padding: 20px 0;
+    margin: 50px auto;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 500px;
+
+    @include media("<= 515px") {
+      width: 400px;
+    }
+
+    @include media("<= 410px") {
+      width: 350px;
+    }
+
+    @include media("< 410px") {
+      width: 350px;
+    }
   }
 }
 

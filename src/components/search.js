@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { setWeatherResponseState } from "../store/fetchSlice";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "../Api/api";
 
-const Search = () => {
+const Search = ({ className }) => {
   const location = useLocation();
   const [search, setSearch] = useState(null);
   const navigate = useNavigate();
@@ -68,7 +68,7 @@ const Search = () => {
   };
 
   return (
-    <div className="search-icon">
+    <div className={className}>
       <AsyncPaginate
         placeholder="Search for city"
         debounceTimeout={600}
