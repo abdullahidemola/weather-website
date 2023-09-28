@@ -12,7 +12,7 @@ const DetailsPage = () => {
   console.log(forecastData);
   const navigate = useNavigate();
 
-  const onClickHandler = () => navigate("/weather-website");
+  const onClickHandler = () => navigate("/");
 
   return (
     <div className="container ">
