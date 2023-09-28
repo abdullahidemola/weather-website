@@ -1,11 +1,11 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import DetailsPage from "./pages/detailsPage";
 import HomePage from "./components/homePage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { path: "", element: <HomePage /> },
   {
-    path: "details/",
+    path: "/details",
     element: <DetailsPage />,
   },
 ]);
