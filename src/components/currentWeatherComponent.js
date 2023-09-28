@@ -7,7 +7,6 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
-
 const days = [
   "Monday",
   "Tuesday",
@@ -24,8 +23,6 @@ const forecastDays = days
   .concat(days.slice(0, currentDay));
 
 const CurrentWeatherComponent = ({ weatherData, forecastData }) => {
-  
-
   return (
     <>
       <div className="cw-container">
@@ -44,13 +41,13 @@ const CurrentWeatherComponent = ({ weatherData, forecastData }) => {
         </div>
         <div className="weather-data">
           <p className="temp">
-            {Math.round(weatherData.main.temp * 10) / 10}°C
+            {Math.round(weatherData.main.temp * 10) / 10} °C
           </p>
           <div className="details">
             <div className="parameter">
               <span className="label">Feels like</span>
               <span className="value">
-                {Math.round(weatherData.main.feels_like * 10) / 10}°C
+                {Math.round(weatherData.main.feels_like * 10) / 10} °C
               </span>
             </div>
             <div className="parameter">
@@ -59,11 +56,11 @@ const CurrentWeatherComponent = ({ weatherData, forecastData }) => {
             </div>
             <div className="parameter">
               <span className="label">humidity</span>
-              <span className="value">{weatherData.main.humidity}%</span>
+              <span className="value">{weatherData.main.humidity} %</span>
             </div>
             <div className="parameter">
               <span className="label">Pressure</span>
-              <span className="value">{weatherData.main.pressure}</span>
+              <span className="value">{weatherData.main.pressure} hPa</span>
             </div>
             <div className="parameter"></div>
           </div>
@@ -102,21 +99,21 @@ const CurrentWeatherComponent = ({ weatherData, forecastData }) => {
                     <div className="content-section">
                       <div className="content">
                         <span>pressure: </span>
-                        <span>{item.main.pressure}</span>
+                        <span>{item.main.pressure} hPa</span>
                       </div>
                       <div className="content">
                         <span>humidity: </span>
-                        <span>{item.main.humidity}%</span>
+                        <span>{item.main.humidity} %</span>
                       </div>
                     </div>
                     <div className="content-section">
                       <div className="content">
                         <span>wind speed: </span>
-                        <span>{item.wind.speed}m/s</span>
+                        <span>{item.wind.speed} m/s</span>
                       </div>
                       <div className="content">
                         <span>clouds: </span>
-                        <span>{item.clouds.all}%</span>
+                        <span>{item.clouds.all} %</span>
                       </div>
                     </div>
                   </div>
