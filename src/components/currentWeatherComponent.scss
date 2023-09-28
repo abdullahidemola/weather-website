@@ -109,8 +109,8 @@
         width: 300px;
       }
       @include media("<415px") {
-        width: 18rem;
-        margin-left: 6px;
+        width: 21rem;
+        margin-left: -6px;
       }
     }
   }
