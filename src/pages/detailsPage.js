@@ -9,7 +9,6 @@ const DetailsPage = () => {
   const fetchedWeatherData = useSelector((state) => state.fetchHandler);
   const forecastData = fetchedWeatherData.forecastResponseData;
   const weatherData = fetchedWeatherData.weatherResponseData;
-  console.log(forecastData);
   const navigate = useNavigate();
 
   const onClickHandler = () => navigate("/");
